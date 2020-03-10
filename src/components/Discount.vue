@@ -139,6 +139,18 @@ export default {
          .num{
              font-size: 64px;
          }
+          .bg::after{
+        animation: slide 2s infinite;
+        background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
+        content: "";
+        transform: translateX(100%);
+        z-index: -1;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
     }
     @media (min-width: 992px) and (max-width: 1199px){
         .discount-alert{
@@ -155,6 +167,18 @@ export default {
          .num{
              font-size: 64px;
          }
+          .bg::after{
+        animation: slide 2s infinite;
+        background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
+        content: "";
+        transform: translateX(100%);
+        z-index: -1;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
     }
     @media (min-width: 768px) and (max-width: 991px){
         .discount-alert{
@@ -171,6 +195,18 @@ export default {
          .num{
              font-size: 64px;
          }
+          .bg::after{
+        animation: slide 2s infinite;
+        background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
+        content: "";
+        transform: translateX(100%);
+        z-index: -1;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
     }
     @media (max-width: 767px) { 
         .discount-alert{
@@ -245,17 +281,5 @@ export default {
         to{ 
             transform: translateX(100%);
             opacity: 0;}
-    }
-    .bg::after{
-        animation: slide 2s infinite;
-        background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
-        content: "";
-        transform: translateX(100%);
-        z-index: -1;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
     }
 </style>
