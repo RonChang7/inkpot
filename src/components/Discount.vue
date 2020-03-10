@@ -91,7 +91,7 @@ export default {
                 alert("恭喜獲得優惠！");   
             }
         }
-        canvas.ontouchstart = () =>{
+        canvas.ontouchstart = function(){
             canvas.ontouchmove = function(e){
                 // 获取鼠标相对于画布左上角的位置
                 var x = e.offsetX,y = e.offsetY;
@@ -102,7 +102,7 @@ export default {
             }
             canvas.ontouchstop = function(){
                 canvas.ontouchmove = null;
-                canvas.ontouchs = null;
+                canvas.ontouchstop = null;
             }
             var num = 0;
             var datas = ctx.getImageData(50, 25, w - 110, h - 50);
