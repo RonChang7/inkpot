@@ -100,10 +100,11 @@ export default {
                 // 填充
                 ctx.fill();
             }
-            canvas.ontouchstop = function(){
+            canvas.ontouchend = function(){
                 canvas.ontouchmove = null;
-                canvas.ontouchstop = null;
+                canvas.ontouchend = null;
             }
+            ontouchstart = false;
             var num = 0;
             var datas = ctx.getImageData(50, 25, w - 110, h - 50);
             for (var i = 0; i < datas.data.length; i++) {
