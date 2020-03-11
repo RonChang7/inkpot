@@ -64,7 +64,33 @@ export default {
         ctx.globalCompositeOperation = 'destination-out';     
         var scratcherBack = document.getElementsByClassName("scratcherBack");
         scratcherBack[0].style.display = "block";
-
+        
+        canvas.ontouchstart = function(){
+            canvas.ontouchmove = function(e){
+                // 获取鼠标相对于画布左上角的位置
+                var x = e.touches[0].clientX,y = e.touches[0].clientY;
+                // 画圆
+                ctx.arc(x,y,20,0,2 * Math.PI);
+                // 填充
+                ctx.fill();
+            }
+            canvas.ontouchend = function(){
+                canvas.ontouchmove = null;
+                canvas.ontouchend = null;
+            }
+            ontouchstart = false;
+            var num = 0;
+            var datas = ctx.getImageData(50, 25, w - 110, h - 50);
+            for (var i = 0; i < datas.data.length; i++) {
+                if (datas.data[i] == 0) {
+                num++;
+                };
+            };
+            if (num >= datas.data.length * .7) {
+                // 达到面积要求时执行的内容    
+                alert("恭喜獲得優惠！");   
+            }
+        };
         canvas.onmousedown = function(){
             canvas.onmousemove = function(e){
                 // 获取鼠标相对于画布左上角的位置
@@ -91,32 +117,6 @@ export default {
                 alert("恭喜獲得優惠！");   
             }
         }
-        canvas.ontouchstart = function(){
-            canvas.ontouchmove = function(e){
-                // 获取鼠标相对于画布左上角的位置
-                var x = e.offsetX,y = e.offsetY;
-                // 画圆
-                ctx.arc(x,y,20,0,2 * Math.PI);
-                // 填充
-                ctx.fill();
-            }
-            canvas.ontouchend = function(){
-                canvas.ontouchmove = null;
-                canvas.ontouchend = null;
-            }
-            ontouchstart = false;
-            var num = 0;
-            var datas = ctx.getImageData(50, 25, w - 110, h - 50);
-            for (var i = 0; i < datas.data.length; i++) {
-                if (datas.data[i] == 0) {
-                num++;
-                };
-            };
-            if (num >= datas.data.length * .7) {
-                // 达到面积要求时执行的内容    
-                alert("恭喜獲得優惠！");   
-            }
-        };
     },
     components:{
         'app-header':Header,
@@ -137,21 +137,21 @@ export default {
         .discount-alert img{
             width: 100px;
         }
-         .num{
+        .num{
              font-size: 64px;
          }
-          .bg::after{
-        animation: slide 2s infinite;
-        background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
-        content: "";
-        transform: translateX(100%);
-        z-index: -1;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
+        .bg::after{
+            animation: slide 2s infinite;
+            background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
+            content: "";
+            transform: translateX(100%);
+            z-index: -1;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
     }
     @media (min-width: 992px) and (max-width: 1199px){
         .discount-alert{
@@ -168,18 +168,18 @@ export default {
          .num{
              font-size: 64px;
          }
-          .bg::after{
-        animation: slide 2s infinite;
-        background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
-        content: "";
-        transform: translateX(100%);
-        z-index: -1;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
+        .bg::after{
+            animation: slide 2s infinite;
+            background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
+            content: "";
+            transform: translateX(100%);
+            z-index: -1;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
     }
     @media (min-width: 768px) and (max-width: 991px){
         .discount-alert{
@@ -196,18 +196,18 @@ export default {
          .num{
              font-size: 64px;
          }
-          .bg::after{
-        animation: slide 2s infinite;
-        background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
-        content: "";
-        transform: translateX(100%);
-        z-index: -1;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
+        .bg::after{
+            animation: slide 2s infinite;
+            background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.65) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0));
+            content: "";
+            transform: translateX(100%);
+            z-index: -1;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
     }
     @media (max-width: 767px) { 
         .discount-alert{
@@ -234,7 +234,7 @@ export default {
         to{ color: #dc3545; }
     }
     .bg{
-        height: 606px;
+        height: 73vh;
         background:linear-gradient(63deg,#ffd741,#ffe532 48%,#ffd741) ;
         opacity: .85;
     }

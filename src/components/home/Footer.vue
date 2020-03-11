@@ -1,5 +1,5 @@
 <template>
-    <footer class="fluid-container py-3 border-top">
+    <footer class="fluid-container pt-2 border-top">
         <ul class="list-inline text-center mt-3">
             <li class="list-inline-item"><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="javascript:;"><i class="fab fa-github"></i></a></li>
