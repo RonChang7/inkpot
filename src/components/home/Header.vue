@@ -59,7 +59,6 @@ export default {
         .dropmenu{
             min-width: 370px;
             right: 0;
-
         }
         .cart{
             top: 25px;
@@ -100,14 +99,10 @@ export default {
             top: 25px;
             right: 25px;
         }
-        // .navbar:nth-child(2){
-        //     flex-wrap: wrap;
-        // }   
         .dropmenu{
             min-width: 200px;
             right: -16px;
             width: 327px;
-
         }
     }
     .container-fluid{
@@ -169,6 +164,5 @@ export default {
         right: -.7rem;
         top: -.7rem;
     }
-
 </style>
 
