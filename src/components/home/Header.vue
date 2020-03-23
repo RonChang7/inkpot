@@ -19,14 +19,13 @@
             </ul>
         </nav>
         <a class="cart position-fixed"
-            @click="show=!show" :style="show ? 'color: #EE8A42' : ''" style="cursor:pointer">
+            @click="show=!show" style="cursor:pointer">
             <i class="fas fa-shopping-cart"></i>
-            <!-- <img src="static/pictures/inkbottleCart.png" alt="cart"> -->
             <span v-if="totalQty === 0 ? false : true" class="badge badge-pill badge-danger text-white">{{ totalQty }}</span>
-            <div v-if="show" class="dropdown cart text-decoration-none">
-                <pre-Cart></pre-Cart>
-            </div>
         </a>
+        <div v-if="show" class="dropdown cart text-decoration-none">
+            <pre-Cart></pre-Cart>
+        </div>
     </div>  
 </template>
 <script>
@@ -59,6 +58,8 @@ export default {
         }
         .dropmenu{
             min-width: 370px;
+            right: 0;
+
         }
         .cart{
             top: 25px;
@@ -70,10 +71,11 @@ export default {
             margin-left: 5vw;
         }
         .dropmenu{
-            min-width: 370px;
+            min-width: 370px;        
+            right: 0;
         }
         .cart{
-             top: 25px;
+            top: 25px;
             right: 25px;
         }
     }
@@ -83,9 +85,10 @@ export default {
         }
         .dropmenu{
             min-width: 370px;
+            right: 0;
         }
         .cart{
-             top: 25px;
+            top: 25px;
             right: 25px;
         }     
     }
@@ -94,14 +97,17 @@ export default {
             justify-content: center;
         }
         .cart{
-             top: 25px;
+            top: 25px;
             right: 25px;
         }
         // .navbar:nth-child(2){
         //     flex-wrap: wrap;
         // }   
         .dropmenu{
-            min-width: 150px;
+            min-width: 200px;
+            right: -16px;
+            width: 327px;
+
         }
     }
     .container-fluid{
@@ -154,8 +160,7 @@ export default {
         background: #fff;
         border: 1px solid #dee2e6;
         border-radius: 8px;
-        top: -20px;
-        right: -10px;
+        top: -40px;
         z-index: 10000;
     }
     .badge {
