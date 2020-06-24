@@ -321,6 +321,8 @@ export default {
         margin-left: 30px;
         width: 45px;
         height: 45px;
+        display: flex;
+        align-items: center;
         color: orange;
         background-image:none;
         border-color:orange;
